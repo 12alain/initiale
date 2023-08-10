@@ -1,1 +1,26 @@
 
+name: Copy Data
+
+on:[push]
+
+jobs:
+  copy_data:
+    runs-on: windows-latest
+
+    steps:
+    - name: Checkout repository
+      uses: actions/checkout@v2
+
+    - name: Set up Python
+      uses: actions/setup-python@v2
+      with:
+        python-version: 3.x
+
+    - name: Copy data file
+      run: |
+        $sourceFilePath = "./data/spam.csv"
+        $destinationFolder = "./data/raw"
+        if (!(Test-Path -Path $destinationFolder)) {
+          New-Item -ItemType Directory -Path $destinationFolder
+        }
+        Copy-Item -Path $sourceFilePath -Destination $destinationFolder -Force
