@@ -1,4 +1,4 @@
-name: mlops-exaple-tensorflow-regression
+name: regression
 on:
   [push]   
 
@@ -13,7 +13,7 @@ jobs:
       - name: Set up Python
         uses: actions/setup-python@v2
         with:
-         python-version: 3.9  # Version de Python 
+         python-version: 3.9 
 
       - name: Install Dependencies
         run: |
@@ -24,17 +24,8 @@ jobs:
         run: |
           python model.py
 
-          echo "## Model Metrics" > report.md
-          cat metrics.txt >> report.md
-
-          echo "\n## Model Performance" >> report.md
-          echo "Model performance metrics are on the plot below." >> report.md
-
-          # Assuming cml-publish and cml-send-comment are commands from some tool
-          cml-publish model_results.png --md >> report.md
-
-          cml-send-comment report.md
-
+         
+      
       - name: Commit and Push Report
         run: |
           git config --local user.email "action@github.com"
