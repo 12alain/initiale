@@ -6,7 +6,7 @@ import matplotlib.pyplot as plt
 df = pd.read_csv('./data/billets.csv', sep=";")
 # correction des valeurs manquantes
 df['margin_low'].fillna(value=df['margin_low'].mean(),inplace=True)
- df['is_genuine'].astype('int')
+df['is_genuine'].astype('int')
 from sklearn.model_selection import train_test_split
 x=df[["diagonal","height_left","height_right","margin_low","margin_up","length"]]
 y=df["is_genuine"]
