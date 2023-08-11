@@ -22,7 +22,7 @@ jobs:
       
       - name: Data Preprocessing 
         run: |
-          python data_cleaned.py
+          python ./data_cleanes/data_cleaned.py
 
       - name: Train and Evaluate Model
         run: |
