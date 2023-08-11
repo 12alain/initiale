@@ -26,9 +26,4 @@ jobs:
 
          
       
-      - name: Commit and Push Report
-        run: |
-          git config --local user.email "action@github.com"
-          git config --local user.name "GitHub Action"
-          git commit -am "Add model evaluation report"
-          git push
+    
