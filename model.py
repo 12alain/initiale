@@ -3,8 +3,7 @@ import pandas as pd
 import numpy as np
 import seaborn as sb
 import matplotlib.pyplot as plt
-
-df = pd.read_csv('/data/billets.csv', sep=";")
+df = pd.read_csv('./data/billets.csv', sep=";")
 from sklearn.model_selection import train_test_split
 x=df[["diagonal","height_left","height_right","margin_low","margin_up","length"]]
 y=df["is_genuine"]
