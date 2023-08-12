@@ -16,13 +16,3 @@ jobs:
         run: |
           ls ${{ github.workspace }}
       - run: echo "🍏 This job's status is ${{ job.status }}."
-
-          python ./data_cleanes/data_cleaned.py
-
-      - name: Train and Evaluate Model
-        run: |
-          python model.py
-
-         
-      
-    
